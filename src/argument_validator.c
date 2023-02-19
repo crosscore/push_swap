@@ -6,7 +6,7 @@
 /*   By: ysakahar <ysakahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:48:31 by ysakahar          #+#    #+#             */
-/*   Updated: 2023/02/19 00:22:39 by ysakahar         ###   ########.fr       */
+/*   Updated: 2023/02/19 14:33:28 by ysakahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static int	is_arg_number(char *argv)
 /* has_duplicates:
 引数リストに重複する数字があるかどうかを確認します。
 戻り値: 重複がある場合は1、ない場合は0。*/
+/*
 static int	has_duplicates(char **argv)
 {
 	int	i;
@@ -44,6 +45,29 @@ static int	has_duplicates(char **argv)
 		while (argv[j])
 		{
 			if (j != i && str_num_cmp(argv[i], argv[j]) == 0)
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+*/
+
+static int	has_duplicates(char **argv)
+{
+	int	i;
+	int	j;
+
+	if (!argv)
+		return (0);
+	i = 1;
+	while (argv[i])
+	{
+		j = i + 1;
+		while (argv[j])
+		{
+			if (str_num_cmp(argv[i], argv[j]) == 0)
 				return (1);
 			j++;
 		}
@@ -77,6 +101,8 @@ int	is_input_formatted_correctly(char **argv)
 	int	i;
 	int	nb_zeros;
 
+	if (!argv)
+		return (0);
 	nb_zeros = 0;
 	i = 1;
 	while (argv[i])
