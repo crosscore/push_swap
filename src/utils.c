@@ -6,7 +6,7 @@
 /*   By: ysakahar <ysakahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:40:24 by mcombeau          #+#    #+#             */
-/*   Updated: 2023/02/19 00:26:53 by ysakahar         ###   ########.fr       */
+/*   Updated: 2023/02/19 20:07:26 by ysakahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,16 @@ tmp変数を使用して、次のノードへのポインタを一時的に保�
 void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
+	t_stack	*next;
 
-	while (*stack != NULL)
+	tmp = *stack;
+	while (tmp != NULL)
 	{
-		tmp = *stack;
-		*stack = (*stack)->next;
+		next = tmp->next;
 		free(tmp);
-		tmp = NULL;
+		tmp = next;
 	}
+	*stack = NULL;
 }
 
 void	display_error_and_exit(t_stack **stack_a, t_stack **stack_b)

@@ -6,7 +6,7 @@
 /*   By: ysakahar <ysakahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:31:04 by ysakahar          #+#    #+#             */
-/*   Updated: 2023/02/19 00:21:41 by ysakahar         ###   ########.fr       */
+/*   Updated: 2023/02/19 20:48:29 by ysakahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ t_stack	*create_stack_from_argv(int argc, char **argv)
 	{
 		n = ft_atoi(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
-			display_error_and_exit(&stack_a, NULL);
+		{
+			free_new_argv(argv);
+			display_error_and_exit(NULL, NULL);
+		}
 		if (i == 1)
 			stack_a = create_new_stack((int)n);
 		else

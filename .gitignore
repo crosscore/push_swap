@@ -1,0 +1,21 @@
+
+#System files
+.DS_Store
+
+#Object files
+*.o
+
+#Libraries
+*.lib
+*.a
+
+#Excutables
+*.out
+
+#Temp files
+*.swp
+
+#Debug files
+*.DSYM/
+
+#Readme files

@@ -6,7 +6,7 @@
 /*   By: ysakahar <ysakahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:40:30 by ysakahar          #+#    #+#             */
-/*   Updated: 2023/02/18 18:55:01 by ysakahar         ###   ########.fr       */
+/*   Updated: 2023/02/19 20:28:31 by ysakahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ typedef struct s_stack
 }	t_stack;
 
 /* Split Arguments */
+void	free_new_argv(char **argv);
+void	free_string_array(char **array, int size);
 char	*ft_strdup(const char *s1);
 int		count_words(char *str);
-void	free_string_array(char **array, int size);
 char	**ft_split(char const *s, char c);
 char	**split_args(char **argv, int *new_argc);
 
