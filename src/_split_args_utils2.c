@@ -6,7 +6,7 @@
 /*   By: ysakahar <ysakahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 19:17:48 by ysakahar          #+#    #+#             */
-/*   Updated: 2023/02/18 19:12:56 by ysakahar         ###   ########.fr       */
+/*   Updated: 2023/02/19 22:16:25 by ysakahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void	ft_split_loop(char const *s, char c, char **array, int *j)
 			temp[k] = '\0';
 			array[*j] = temp;
 			(*j)++;
+			array[*j] = NULL;
 		}
 	}
 }
@@ -93,10 +94,9 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	array = malloc(sizeof(char *) * (ft_word_count(s, c) + 1));
-	if (!(array))
+	if (!array)
 		return (NULL);
 	j = 0;
 	ft_split_loop(s, c, array, &j);
-	array[j] = NULL;
 	return (array);
 }

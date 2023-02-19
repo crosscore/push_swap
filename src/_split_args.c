@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysakahar <ysakahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 19:07:34 by ysakahar          #+#    #+#             */
-/*   Updated: 2023/02/19 20:32:16 by ysakahar         ###   ########.fr       */
+/*   Created: 2023/02/19 23:11:29 by ysakahar          #+#    #+#             */
+/*   Updated: 2023/02/19 23:20:25 by ysakahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,20 @@ int	split_words(char **argv, char **new_argv, int i, int j)
 	k = 0;
 	while (k < word_count)
 	{
-		new_argv[i] = ft_strdup(words[k]);
-		if (!is_input_formatted_correctly(&new_argv[i]))
+		if (!is_input_formatted_correctly(&words[k]))
 		{
-			free_new_argv(&new_argv[i]);
+			free_string_array(new_argv, i);
+			free_string_array(words, word_count);
 			display_error_and_exit(NULL, NULL);
 		}
+		new_argv[i] = ft_strdup(words[k]);
 		i++;
 		k++;
 	}
 	free_string_array(words, word_count);
 	return (i);
 }
+
 
 char	**split_args(char **argv, int *new_argc)
 {

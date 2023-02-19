@@ -6,7 +6,7 @@
 /*   By: ysakahar <ysakahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:48:31 by ysakahar          #+#    #+#             */
-/*   Updated: 2023/02/19 21:07:14 by ysakahar         ###   ########.fr       */
+/*   Updated: 2023/02/19 21:17:20 by ysakahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,13 @@ int	is_input_formatted_correctly(char **argv)
 	int	nb_zeros;
 
 	nb_zeros = 0;
-	i = 0;
-	while (argv[++i])
+	i = 1;
+	while (argv[i])
 	{
 		if (!is_arg_number(argv[i]))
 			return (0);
 		nb_zeros += is_arg_zero(argv[i]);
+		i++;
 	}
 	if (nb_zeros > 1)
 		return (0);

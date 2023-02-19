@@ -6,7 +6,7 @@
 /*   By: ysakahar <ysakahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 19:17:48 by ysakahar          #+#    #+#             */
-/*   Updated: 2023/02/18 18:52:48 by ysakahar         ###   ########.fr       */
+/*   Updated: 2023/02/19 21:30:29 by ysakahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	free_string_array(char **array, int size)
 	while (i < size)
 	{
 		free(array[i]);
+		array[i] = NULL;
 		i++;
 	}
 	free(array);

@@ -6,7 +6,7 @@
 /*   By: ysakahar <ysakahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:06:46 by ysakahar          #+#    #+#             */
-/*   Updated: 2023/02/19 20:49:51 by ysakahar         ###   ########.fr       */
+/*   Updated: 2023/02/19 23:21:13 by ysakahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,9 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
+/*
 __attribute__((destructor)) static void	destructor(void)
 {
 	system("leaks -q push_swap");
 }
-
-/*
 */
