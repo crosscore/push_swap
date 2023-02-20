@@ -7,5 +7,4 @@ OK
 ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
 	6
 
-
 ./visualizer ./push_swap
