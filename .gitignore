@@ -1,6 +1,8 @@
+#push_swap_tester/
 txt/
 .gitignore
-test*
+#test*
+#visualizer
 
 #System files
 .DS_Store
@@ -22,3 +24,4 @@ test*
 *.DSYM/
 
 #Readme files
+#*.md
