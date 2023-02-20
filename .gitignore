@@ -1,9 +1,6 @@
-push_swap_tester/
 txt/
 .gitignore
 test*
-visualizer
-checker_*
 
 #System files
 .DS_Store
@@ -25,4 +22,3 @@ checker_*
 *.DSYM/
 
 #Readme files
-*.md

@@ -6,7 +6,7 @@
 /*   By: ysakahar <ysakahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 23:11:29 by ysakahar          #+#    #+#             */
-/*   Updated: 2023/02/19 23:20:25 by ysakahar         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:32:34 by ysakahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	split_words(char **argv, char **new_argv, int i, int j)
 	free_string_array(words, word_count);
 	return (i);
 }
-
 
 char	**split_args(char **argv, int *new_argc)
 {

@@ -6,7 +6,7 @@
 /*   By: ysakahar <ysakahar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:06:46 by ysakahar          #+#    #+#             */
-/*   Updated: 2023/02/19 23:21:13 by ysakahar         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:29:16 by ysakahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	free_new_argv(char **argv)
 		argv[i] = NULL;
 		i++;
 	}
+	free(argv);
 }
 
 int	main(int argc, char **argv)
@@ -70,7 +71,7 @@ int	main(int argc, char **argv)
 		display_error_and_exit(NULL, NULL);
 	}
 	stack_b = NULL;
-	stack_a = create_stack_from_argv(new_argc, new_argv);
+	stack_a = create_stack_from_argv(argc, argv);
 	stack_size = calculate_stack_size(stack_a);
 	set_index_values(stack_a, stack_size + 1);
 	push_swap(&stack_a, &stack_b, stack_size);
